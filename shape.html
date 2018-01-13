@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="550"></canvas>
+    <canvas id="myCanvas1" width="578" height="200"></canvas>
+    <canvas id="myCanvas2" width="750" height="200"></canvas>
+    
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var x = canvas.width / 2;
+      var y = canvas.height / 2;
+      var radius = 75;
+      var startAngle = 1.1 * Math.PI;
+      var endAngle = 1.9 * Math.PI;
+      var counterClockwise = false;
+      context.beginPath();
+      context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+      context.lineWidth = 15;
+      context.strokeStyle = 'blue';
+      context.stroke();
+      var canvas1 = document.getElementById('myCanvas1');
+      var context1 = canvas1.getContext('2d');
+      context1.beginPath();
+      context1.moveTo(100, 150);
+      context1.lineTo(450, 50);
+      context1.stroke();
+      var canvas2 = document.getElementById('myCanvas2');
+      var context2 = canvas2.getContext('2d');
+      context2.beginPath();
+      context2.rect(188, 50, 200, 100);
+      context2.fillStyle = 'yellow';
+      context2.fill();
+      context2.lineWidth = 7;
+      context2.strokeStyle = 'black';
+      context2.stroke();
+    </script>
+  </body>
+</html>    
